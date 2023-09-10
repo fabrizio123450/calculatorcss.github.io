@@ -3,9 +3,8 @@ const CALCULAR = document.getElementById('calcular');
 const ERROR = document.getElementById('error');
 const FLU = document.getElementById('flu');
 const MAN = document.getElementById('man');
-
+const colores = document.getElementsByClassName('colores')
 CALCULAR.addEventListener('click', () => {
-    console.log("asd")
     const DATO = document.getElementById('peso').value
     //validamos que se cargue un dato:
     if (DATO > 0){
@@ -22,19 +21,30 @@ CALCULAR.addEventListener('click', () => {
         MAN.style.display = 'none';
     }
 });
+///https://www.merckmanuals.com/medical-calculators/MaintenanceFluidChildren-es.htm
 function calcFlujo(peso){
-    let resto = peso;
+    console.log("primero "+peso);
     let flujo = 0;
-    if (resto>20){
-        let aux = resto-20;
+    if (peso>20){
+        let aux = peso-20;
+        console.log(aux);
         flujo += aux*1;
-        resto -= aux;
+        console.log(flujo);
+        peso -= aux;
+        console.log(peso);
     } 
-    if (resto>10){
-        let aux = resto-10;
-        flujo += aux*2;
-        resto -= aux;
+    if (peso>=10){
+        let aux = peso-10;//15-10 = 5
+        
+        flujo += aux*2;//5*2 = 10
+
+        flujo*=100;//primeros 10= 1000
+        aux*=50;//sgte de 10 5*50 = 250
+        
+        flujo= (flujo +aux)/24
+        console.log("MI RESULTADO " + flujo);
     }
-    flujo += resto*4;
+    
     return flujo;
 }
+

@@ -72,6 +72,11 @@ button:active {
     font-weight: bold;
     display: none;
 }
+#error-two{
+    color: red;
+    font-weight: bold;
+    display: none;
+}
 
 .resultado{
     color: #0A81D1;
