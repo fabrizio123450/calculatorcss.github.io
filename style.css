@@ -63,7 +63,18 @@ button {
 	letter-spacing: 1px;
 	transition: transform 20ms ease-in;
 }
+.boton-pequeno {
+    padding: 5px 10px; /* Ajusta el padding para controlar el tamaño */
+    font-size: 12px; /* Ajusta el tamaño de fuente */
 
+    background-color: #03161b; /* Agrega un color de fondo opcional */
+    cursor: pointer; /* Cambia el cursor al estilo de un botón */
+  }
+  
+.boton-pequeno:hover {
+    background-color: #ddd; /* Cambia el color de fondo al pasar el mouse por encima */
+}
+  
 button:active {
 	transform: scale(0.95);
 }
